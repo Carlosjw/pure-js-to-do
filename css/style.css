@@ -151,3 +151,13 @@ select {
 .todo button {
     margin-left: .4rem;
 }
+
+.done {
+    background-color: #395169;
+}
+
+.done h3 {
+    color: #fff;
+    text-decoration: line-through;
+    font-style: italic;
+}
