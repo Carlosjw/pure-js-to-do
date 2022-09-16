@@ -1,14 +1,30 @@
-let numbers = [];
+// Seleção de elementos
+const todoForm = document.querySelector("#todo-form");
+const todoInput = document.querySelector("#todo-input");
+const todoList = document.querySelector("#todo-list");
+const editForm = document.querySelector("#edit-form");
+const editInput = document.querySelector("#edit-input");
+const cancelEditBtn = document.querySelector("#cancel-edit-btn");
+// Funções
+const saveTodo = (text) => {
 
-for(let i =0; i <= 100; i++){
-    numbers.push(i)
+    // criando div
+    const todo = document.createElement("div");
+    // adicionando classe ao elemento/tag criado
+    todo.classList.add("todo");
+
+    // criando cabeçalho
+    const todoTitle = document.createElement("h3");
+    todoTitle.innerText = text;
 }
 
-const pares = numbers.filter(number => number % 2 == 0);
+// Eventos
+todoForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // não deixa o formulário ser enviado ao back-end quando for pressionado o botão
 
-const impares = numbers.filter(number => number % 2 !== 0)
+    const inputValue = todoInput.value;
 
-console.log(pares);
-console.log(impares)
-
-// console.log(numbers)
+    if(inputValue){
+        saveTodo(inputValue)
+    }
+})
