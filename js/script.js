@@ -16,6 +16,28 @@ const saveTodo = (text) => {
     // criando cabeçalho
     const todoTitle = document.createElement("h3");
     todoTitle.innerText = text;
+
+    // criando botões
+    const doneBtn = document.createElement("button");
+    doneBtn.classList.add("finish-todo");
+    doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+    // colocando o botão dentro da div
+    todo.appendChild(doneBtn);
+
+    const editBtn = document.createElement("button");
+    editBtn.classList.add("edit-todo");
+    editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>';
+    // colocando o botão dentro da div}
+    todo.appendChild(editBtn);
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("remove-todo");
+    deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    // colocando o botão dentro da div}
+    todo.appendChild(deleteBtn);
+
+    // colocando tudo dentro da lista/div principal
+    todoList.appendChild(todo)
 }
 
 // Eventos
